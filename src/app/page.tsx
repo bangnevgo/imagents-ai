@@ -7,7 +7,8 @@ import {
   Activity, Globe, MessageSquare, GitBranch, Mic,
   Camera, FileText, LayoutGrid, Workflow, Code2,
   Cloud, MessageCircle, PencilRuler, Hammer, Rocket,
-  Check, ShieldCheck, Send, Menu, X, Linkedin, Twitter, Github
+  Check, ShieldCheck, Send, Menu, X, Linkedin, Twitter, Github,
+  Mail
 } from 'lucide-react'
 
 function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -913,6 +914,26 @@ export default function Home() {
                       ? 'Tell us about your needs. Whether it\'s orchestration, custom apps, or SaaS — we\'re ready to discuss.' 
                       : 'Ceritakan kebutuhan Anda. Baik itu orchestration, custom app, atau SaaS — kami siap diskusi.'}
                   </p>
+                  
+                  {/* Direct Contact Links */}
+                  <div className="flex flex-wrap items-center justify-center gap-4 text-xs mt-6">
+                    <a 
+                      href="mailto:infoimagent.ai@gmail.com" 
+                      className="glassmorphism px-4 py-2.5 rounded-full border border-primary/10 flex items-center gap-2 text-foreground/60 hover:text-primary hover:border-primary/30 transition-all cursor-pointer"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-primary" />
+                      <span>infoimagent.ai@gmail.com</span>
+                    </a>
+                    <a 
+                      href="https://wa.me/628989221700" 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="glassmorphism px-4 py-2.5 rounded-full border border-primary/10 flex items-center gap-2 text-foreground/60 hover:text-emerald-400 hover:border-emerald-400/30 transition-all cursor-pointer"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>+62 898-9221-700 (WhatsApp)</span>
+                    </a>
+                  </div>
                 </div>
 
                 <form onSubmit={handleFormSubmit} className="space-y-5 max-w-xl mx-auto">
@@ -1047,6 +1068,24 @@ export default function Home() {
                   </a>
                   <a href="#" className="w-9 h-9 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-center text-foreground/40 hover:text-foreground hover:bg-primary/10 transition-all">
                     <Github className="w-4 h-4" />
+                  </a>
+                </div>
+                <div className="mt-6 space-y-2.5">
+                  <a 
+                    href="mailto:infoimagent.ai@gmail.com" 
+                    className="flex items-center gap-2 text-xs text-foreground/50 hover:text-primary transition-colors cursor-pointer"
+                  >
+                    <Mail className="w-4 h-4 text-primary" />
+                    <span>infoimagent.ai@gmail.com</span>
+                  </a>
+                  <a 
+                    href="https://wa.me/628989221700" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="flex items-center gap-2 text-xs text-foreground/50 hover:text-emerald-400 transition-colors cursor-pointer"
+                  >
+                    <MessageCircle className="w-4 h-4 text-emerald-400" />
+                    <span>+62 898-9221-700</span>
                   </a>
                 </div>
               </div>
