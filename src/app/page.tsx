@@ -339,6 +339,7 @@ export default function Home() {
             <a href="#about" className="text-sm text-foreground/60 hover:text-foreground transition-colors">{lang === 'en' ? 'About' : 'Tentang'}</a>
             <a href="#products" className="text-sm text-foreground/60 hover:text-foreground transition-colors">{lang === 'en' ? 'Products' : 'Produk'}</a>
             <a href="#services" className="text-sm text-foreground/60 hover:text-foreground transition-colors">{lang === 'en' ? 'Services' : 'Layanan'}</a>
+            <a href={lang === 'id' ? '/blog?lang=id' : '/blog?lang=en'} className="text-sm text-foreground/60 hover:text-foreground transition-colors">Blog</a>
             <a href="#process" className="text-sm text-foreground/60 hover:text-foreground transition-colors">{lang === 'en' ? 'Process' : 'Proses'}</a>
             <a href="#contact" className="text-sm text-foreground/60 hover:text-foreground transition-colors">{lang === 'en' ? 'Contact' : 'Kontak'}</a>
           </div>
@@ -414,6 +415,7 @@ export default function Home() {
           <a href="#about" onClick={() => setMobileMenuOpen(false)} className="text-lg text-foreground/70 hover:text-foreground transition-colors">{lang === 'en' ? 'About' : 'Tentang'}</a>
           <a href="#products" onClick={() => setMobileMenuOpen(false)} className="text-lg text-foreground/70 hover:text-foreground transition-colors">{lang === 'en' ? 'Products' : 'Produk'}</a>
           <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-lg text-foreground/70 hover:text-foreground transition-colors">{lang === 'en' ? 'Services' : 'Layanan'}</a>
+          <a href={lang === 'id' ? '/blog?lang=id' : '/blog?lang=en'} onClick={() => setMobileMenuOpen(false)} className="text-lg text-foreground/70 hover:text-foreground transition-colors">Blog</a>
           <a href="#process" onClick={() => setMobileMenuOpen(false)} className="text-lg text-foreground/70 hover:text-foreground transition-colors">{lang === 'en' ? 'Process' : 'Proses'}</a>
           <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-lg text-foreground/70 hover:text-foreground transition-colors">{lang === 'en' ? 'Contact' : 'Kontak'}</a>
           <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="bg-primary hover:bg-primary/80 text-background text-sm font-medium px-6 py-3 rounded-full text-center mt-4 transition-all">
@@ -1137,6 +1139,7 @@ export default function Home() {
                   <li><a href="#services" className="text-sm text-foreground/40 hover:text-foreground/70 transition-colors">{lang === 'en' ? 'Build Together' : 'Bangun Bersama'}</a></li>
                   <li><a href="#services" className="text-sm text-foreground/40 hover:text-foreground/70 transition-colors">{lang === 'en' ? 'Custom Development' : 'Jasa Pembuatan'}</a></li>
                   <li><a href="#services" className="text-sm text-foreground/40 hover:text-foreground/70 transition-colors">{lang === 'en' ? 'SaaS' : 'SaaS'}</a></li>
+                  <li><a href={lang === 'id' ? '/blog?lang=id' : '/blog?lang=en'} className="text-sm text-foreground/40 hover:text-foreground/70 transition-colors">Blog</a></li>
                   <li><a href="#contact" className="text-sm text-foreground/40 hover:text-foreground/70 transition-colors">{lang === 'en' ? 'Contact' : 'Kontak'}</a></li>
                 </ul>
               </div>
