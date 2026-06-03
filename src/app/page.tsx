@@ -283,14 +283,32 @@ export default function Home() {
     setTimeout(() => setToastVisible(false), 3500)
   }
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setFormSubmitting(true)
+
+    const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || '';
+
+    if (scriptUrl) {
+      try {
+        await fetch(scriptUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+      } catch (error) {
+        console.error('Error submitting form to Google Sheet:', error);
+      }
+    }
+
     setTimeout(() => {
       setFormSubmitting(false)
       setFormData({ name: '', email: '', service: '', message: '' })
       showToast(lang === 'en' ? 'Message sent! We will contact you shortly.' : 'Pesan terkirim! Kami akan menghubungi Anda segera.')
-    }, 1500)
+    }, 1200)
   }
 
   return (
