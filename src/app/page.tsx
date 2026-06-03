@@ -7,7 +7,7 @@ import {
   Activity, Globe, MessageSquare, GitBranch, Mic,
   Camera, FileText, LayoutGrid, Workflow, Code2,
   Cloud, MessageCircle, PencilRuler, Hammer, Rocket,
-  Check, ShieldCheck, Send, Menu, X, Linkedin, Twitter, Github,
+  Check, ShieldCheck, Send, Menu, X, Linkedin, Twitter, Github, Instagram,
   Mail
 } from 'lucide-react'
 
@@ -1093,6 +1093,9 @@ export default function Home() {
                     : 'Startup AI yang membangun agent cerdas. Dari produk siap pakai hingga solusi custom — kami siap membantu Anda berinovasi.'}
                 </p>
                 <div className="flex items-center gap-3">
+                  <a href="https://www.instagram.com/imagent_ai/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-center text-foreground/40 hover:text-foreground hover:bg-primary/10 transition-all">
+                    <Instagram className="w-4 h-4" />
+                  </a>
                   <a href="#" className="w-9 h-9 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-center text-foreground/40 hover:text-foreground hover:bg-primary/10 transition-all">
                     <Linkedin className="w-4 h-4" />
                   </a>

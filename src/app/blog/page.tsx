@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { getBlogPosts } from '@/lib/blog'
 import { 
   ArrowLeft, Calendar, User, Clock, 
-  ArrowRight, Linkedin, Twitter, Github, Mail, MessageCircle
+  ArrowRight, Linkedin, Twitter, Github, Mail, MessageCircle, Instagram
 } from 'lucide-react'
 
 interface PageProps {
@@ -194,6 +194,9 @@ export default async function BlogPage({ searchParams }: PageProps) {
                 {dict.footerDesc}
               </p>
               <div className="flex items-center gap-3">
+                <a href="https://www.instagram.com/imagent_ai/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-center text-foreground/40 hover:text-foreground hover:bg-primary/10 transition-all">
+                  <Instagram className="w-4 h-4" />
+                </a>
                 <a href="#" className="w-9 h-9 rounded-lg bg-primary/5 border border-primary/10 flex items-center justify-center text-foreground/40 hover:text-foreground hover:bg-primary/10 transition-all">
                   <Linkedin className="w-4 h-4" />
                 </a>
