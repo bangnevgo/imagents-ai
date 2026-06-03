@@ -59,7 +59,7 @@ export default function Home() {
   const [lang, setLang] = useState<'en' | 'id'>('en') // Default is English
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeFilter, setActiveFilter] = useState('all')
-  const [formData, setFormData] = useState({ name: '', email: '', service: '', message: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', message: '' })
   const [formSubmitting, setFormSubmitting] = useState(false)
   const [toastVisible, setToastVisible] = useState(false)
   const [openFaq, setOpenFaq] = useState<number | null>(null)
@@ -306,7 +306,7 @@ export default function Home() {
 
     setTimeout(() => {
       setFormSubmitting(false)
-      setFormData({ name: '', email: '', service: '', message: '' })
+      setFormData({ name: '', email: '', phone: '', service: '', message: '' })
       showToast(lang === 'en' ? 'Message sent! We will contact you shortly.' : 'Pesan terkirim! Kami akan menghubungi Anda segera.')
     }, 1200)
   }
@@ -980,19 +980,32 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div>
-                    <label className="text-xs text-foreground/40 mb-1.5 block">{lang === 'en' ? 'Service Needed' : 'Layanan yang Dibutuhkan'}</label>
-                    <select
-                      required
-                      value={formData.service}
-                      onChange={e => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full bg-[#0a0b14]/80 border border-primary/10 rounded-xl px-4 py-3 text-sm text-foreground/75 focus:outline-none focus:border-primary/30 transition-colors cursor-pointer"
-                    >
-                      <option value="" disabled>{lang === 'en' ? 'Select a service...' : 'Pilih layanan...'}</option>
-                      <option value="jv">{lang === 'en' ? 'Build Together (Joint-Venture)' : 'Bangun Bersama (Joint-Venture)'}</option>
-                      <option value="bespoke">{lang === 'en' ? 'Custom Development (Bespoke)' : 'Jasa Pembuatan (Bespoke)'}</option>
-                      <option value="saas">{lang === 'en' ? 'SaaS Subscription (SaaS)' : 'Langganan SaaS (SaaS Subscription)'}</option>
-                    </select>
+                  <div className="grid md:grid-cols-2 gap-5">
+                    <div>
+                      <label className="text-xs text-foreground/40 mb-1.5 block">{lang === 'en' ? 'WhatsApp / Phone Number' : 'Nomor WhatsApp / HP'}</label>
+                      <input
+                        type="tel"
+                        placeholder={lang === 'en' ? 'e.g. +628989221700' : 'Contoh: 08989221700'}
+                        required
+                        value={formData.phone}
+                        onChange={e => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full bg-white/5 border border-primary/10 rounded-xl px-4 py-3 text-sm text-foreground placeholder:text-foreground/20 focus:outline-none focus:border-primary/30 transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs text-foreground/40 mb-1.5 block">{lang === 'en' ? 'Service Needed' : 'Layanan yang Dibutuhkan'}</label>
+                      <select
+                        required
+                        value={formData.service}
+                        onChange={e => setFormData({ ...formData, service: e.target.value })}
+                        className="w-full bg-[#0a0b14]/80 border border-primary/10 rounded-xl px-4 py-3 text-sm text-foreground/75 focus:outline-none focus:border-primary/30 transition-colors cursor-pointer"
+                      >
+                        <option value="" disabled>{lang === 'en' ? 'Select a service...' : 'Pilih layanan...'}</option>
+                        <option value="jv">{lang === 'en' ? 'Build Together (Joint-Venture)' : 'Bangun Bersama (Joint-Venture)'}</option>
+                        <option value="bespoke">{lang === 'en' ? 'Custom Development (Bespoke)' : 'Jasa Pembuatan (Bespoke)'}</option>
+                        <option value="saas">{lang === 'en' ? 'SaaS Subscription (SaaS)' : 'Langganan SaaS (SaaS Subscription)'}</option>
+                      </select>
+                    </div>
                   </div>
 
                   <div>
